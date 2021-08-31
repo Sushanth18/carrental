@@ -1,8 +1,8 @@
 package com.carrental.model;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -77,7 +77,7 @@ public class User implements Serializable {
 		this.password = password;
 		this.email = email;
 		this.phone = phone;
-		this.birthDate = birthDate;
+		this.birthDate = new Date();
 		this.pesel = pesel;
 	}
 

@@ -86,6 +86,7 @@ public class VehicleParameters implements Serializable {
 		this.metallic = metallic;
 		this.photoName = photoName;
 		this.description = description;
+		this.vehicle=new Vehicle(vehicleID);
 	}
 
 	public Long getVehicleID() {

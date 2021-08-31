@@ -64,7 +64,7 @@ public class Vehicle implements Serializable {
 
 	@Column(name = "user_id")
 	private Long userId;
-	
+
 	public Vehicle() {
 		super();
 	}
@@ -79,6 +79,11 @@ public class Vehicle implements Serializable {
 		this.locationId = locationId;
 		this.vehicleStatus = vehicleStatus;
 		this.bestOffer = bestOffer;
+	}
+
+	public Vehicle(Long id) {
+		this.id = id;
+
 	}
 
 	public Long getId() {
@@ -168,11 +173,11 @@ public class Vehicle implements Serializable {
 	public void setComments(Set<Comment> comments) {
 		this.comments = comments;
 	}
-	
+
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	
+
 	public Long getUserId() {
 		return userId;
 	}
