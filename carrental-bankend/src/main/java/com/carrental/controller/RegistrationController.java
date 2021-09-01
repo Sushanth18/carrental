@@ -3,6 +3,8 @@ package com.carrental.controller;
 import java.util.Date;
 import java.util.List;
 
+import org.json.simple.JSONObject;
+
 //import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,27 +42,26 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String registerUser(@ModelAttribute("user") UserRegistrationDto user, BindingResult result,
-			WebRequest request, Errors errors, Model model) {
+	public String registerUser(@ModelAttribute("user") UserRegistrationDto user) {
 
-		if (result.hasErrors()) {
-			result.rejectValue("password", "error.user", "Passwords don't match");
-			return "registration";
+		JSONObject jsonObject = new JSONObject();
+		if (!user.getPassword().equalsIgnoreCase(user.getPasswordMatches())) {
+			jsonObject.put("success", 0);
+			jsonObject.put("message", "Passwords don't match");
 		} else {
 			User registered = null;
 			try {
 				registered = userService.addUser(user);
+				jsonObject.put("success", 1); 
 			} catch (LoginExistsException el) {
-				result.rejectValue("login", "error.user", "There is an account with that login");
-				return "registration";
+				jsonObject.put("success", 0);
+				jsonObject.put("message", "There is an account with that username");
 			} catch (EmailExistsException ee) {
-				result.rejectValue("email", "error.user", "There is an account with that email adress");
-				return "registration";
+				jsonObject.put("success", 0);
+				jsonObject.put("message", "There is an account with that email adress");
+				
 			}
-
-			model.addAttribute("user", user);
-
-			return "login";
 		}
+		return jsonObject.toString();
 	}
 }

@@ -64,7 +64,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
 	public User addUser(UserRegistrationDto user) {
 		User userToPersist = new User(user.getName(), user.getSurname(), user.getLogin(),
 				EncryptDecryptUtils.encrypt(user.getPassword()), user.getEmail(), user.getPhone(), user.getBirthDate(),
-				user.getPesel());
+				"09812345");
 
 		long customerRoleId = 2;
 
