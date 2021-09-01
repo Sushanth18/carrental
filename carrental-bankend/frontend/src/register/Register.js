@@ -29,7 +29,7 @@ class Register extends Component {
       formData.append('password',e.target.elements.inputPassword.value);
       formData.append('passwordMatches',e.target.elements.inputPasswordAgain.value);
       formData.append('email',e.target.elements.inputEmail.value);
-     
+      formData.append('phone',e.target.elements.inputPhone.value);
     
       fetch(url, {
         method: 'POST',
@@ -37,9 +37,10 @@ class Register extends Component {
       }).then((response) => {
         response.json().then((json) => {
         console.log("json::",json);
+        this.props.history.push({pathname: '/CarRental/login'});
         });
       });
-      this.props.history.push({pathname: '/CarRental/profile'});
+      
     // this.props.history.push({
     //   pathname: "/CarRental/login",
     //   state: {},
@@ -110,7 +111,18 @@ class Register extends Component {
                 required
               />
             </div>
-
+            <div className="form-group">
+              <label>Phone:</label>
+              <input
+                type="phone"
+                className="form-control"
+                id="inputPhone"
+                name="inputPhone"
+                placeholder="Phone"
+                required
+                autocomplete="off"
+              />
+            </div>
             <div className="form-group">
               <label>Password:</label>
               <input
@@ -123,6 +135,8 @@ class Register extends Component {
                 autocomplete="off"
               />
             </div>
+          
+
 
             <div className="form-group">
               <label>Confirm Password:</label>
