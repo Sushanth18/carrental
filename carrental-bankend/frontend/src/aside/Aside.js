@@ -113,7 +113,7 @@ export default class Aside extends Component {
                                             role={undefined}
                                             dense
                                             button >
-                                            <Avatar alt="User Image" src={userImage} />
+                                            <Avatar alt="User Image" src={userImage} style={{ 	width: "40%" ,height: "10%"}} />
 
                                             <ListItemText primary={user.name}
                                                 secondary={

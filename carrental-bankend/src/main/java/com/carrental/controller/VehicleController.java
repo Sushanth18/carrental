@@ -118,7 +118,7 @@ public class VehicleController {
 		try {
 			byte[] bytes = image.getBytes();
 
-			String filePath = "C:/carrental/img/vehicles_img/" + fileName;
+			String filePath = "C:\\rs\\Workspace\\College\\carrental-Backend\\carrental-bankend\\frontend\\public\\vehicle_img\\" + fileName;
 
 			System.out.println("Dodaje plik -> " + filePath);
 
@@ -143,7 +143,7 @@ public class VehicleController {
 		try {
 			byte[] bytes = image.getBytes();
 
-			String filePath = "C:/carrental/img/vehicles_img/" + fileName;
+			String filePath = "C:\\rs\\Workspace\\College\\carrental-Backend\\carrental-bankend\\frontend\\public\\vehicle_img\\" + fileName;
 
 			System.out.println("Dodaje plik -> " + filePath);
 

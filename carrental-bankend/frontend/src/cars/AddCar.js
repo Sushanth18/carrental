@@ -98,6 +98,7 @@ export class AddCar extends React.Component {
       item["description"] = this.state.car_description;
       item["productionYear"] = this.state.car_production_year;
       item["photoName"] = this.state.car_image_name;
+      item["userId"] = sessionStorage.getItem("user_id");
 
       return item;
     }
@@ -151,6 +152,7 @@ export class AddCar extends React.Component {
       formData.append('description',carWrapper["description"]);
       formData.append('productionYear',carWrapper["productionYear"]);
       formData.append('photoName',carWrapper["photoName"]);
+      formData.append('userId',sessionStorage.getItem("user_id"));
 
       const url = 'http://localhost:8080/CarRental/carlist';
 
@@ -439,7 +441,7 @@ export class AddCar extends React.Component {
       const loaded = this.state.loaded;
 
   		return (
-          <div className="col-md-9 pl-0 pr-3 mb-3 text-center">
+          <div className="col-md-9 pl-0 pr-3 mb-3 text-center" style={{margin:"auto"}}>
             <div className="card">
               <HeaderContainer title={"Car - add"}/>
               {loaded ? this.renderForm() : <i className="fa fa-spinner fa-pulse fa-3x fa-fw "></i>}

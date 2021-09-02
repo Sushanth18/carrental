@@ -57,7 +57,7 @@ export class CarList extends React.Component {
     const carlist = this.state.carlist;
 
 		return (
-      <div className="col-md-9 pl-0 pr-3">
+      <div className="col-md-9 pl-0 pr-3" style={{margin:"auto"}}>
         <div className="card">
           <HeaderContainer title={"Car list"}/>
           <div className="card-body text-center">

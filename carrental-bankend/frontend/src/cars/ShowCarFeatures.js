@@ -164,7 +164,7 @@ export class ShowCarFeatures extends React.Component {
       const allFeaturesList = this.state.allFeaturesList;
 
   		return (
-        <div className="col-md-9 pl-0 pr-3">
+        <div className="col-md-9 pl-0 pr-3" style={{margin:"auto"}}>
           <div className="card">
             <HeaderContainer title={"Car equipment list"}/>
             <div className="card-body text-center">

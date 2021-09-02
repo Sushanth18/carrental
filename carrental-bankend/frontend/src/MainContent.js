@@ -9,10 +9,10 @@ export class MainContent extends React.Component {
 
 	render () {
 		return (
-			<div className="col-md-9 pl-0 pr-3">
+			<div className="col-md-9 pl-0 pr-3" style= {{margin : "auto", marginTop : "10%"}}>
 				<div className="card">
-					<div className="card-header text-center">
-						Welcome
+					<div className="card-header">
+						<label className ="text-center" style ={{marginLeft : "50%"}}>Welcome</label>
 						<NavContainer/>
 					</div>
 				</div>

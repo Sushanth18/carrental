@@ -6,6 +6,7 @@ import '../static/css/main.css';
 import '../static/css/best_offers.css';
 import { Link } from 'react-router-dom'
 
+
 export class Item extends React.Component {
 
 	render () {
@@ -17,8 +18,9 @@ export class Item extends React.Component {
         <div className="text-center">
           <h5>{this.props.brand} {this.props.model}</h5><span className="badge badge-success">Best offer</span>
         </div>
-        <div className="car-img-container mb-3" style={{ backgroundImage : `url(${this.props.photoName})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
-        </div>
+        {/* <div className="car-img-container mb-3" style={{ backgroundImage : `url(file:///C:/rs/Workspace/College/carrental-Backend/carrental-bankend/frontend/src/CarRental/vehicles_img/1.jpg)`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+        </div> */}
+        <img className="car-img-container mb-3" src={window.location.origin + `/vehicle_img/${this.props.photoName}`}></img>
         <div className="row mt-2">
           <h2 className="ml-3">₹ {this.props.dailyFee}</h2>
 					<Link to={"/CarRental/cardetails/"+this.props.id} className="ml-auto linkstyle btn btn-info mr-auto ml-3">Properties</Link>

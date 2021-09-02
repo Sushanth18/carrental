@@ -61,6 +61,7 @@ export class ItemContainer extends React.Component {
 	}
 
   bestOfferToTableRow = vehicle=>{
+	  console.log("vehicle",vehicle);
       const id = vehicle.id;
       const brand = vehicle.brand;
       const model = vehicle.model;

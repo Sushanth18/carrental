@@ -282,7 +282,7 @@ public class VehicleRepositoryImpl implements VehicleRepositoryCustom {
 	public void addVehicle(VehicleAddDto vehicleAddDto) {
 		Vehicle vehicle = new Vehicle(vehicleAddDto.getRegistration(), vehicleAddDto.getBrand(),
 				vehicleAddDto.getModel(), vehicleAddDto.getDailyFee(), vehicleAddDto.getLocation(),
-				vehicleAddDto.getVehicleStatus(), (vehicleAddDto.getBestOffer() != 0 ? true : false));
+				vehicleAddDto.getVehicleStatus(), (vehicleAddDto.getBestOffer() != 0 ? true : false),vehicleAddDto.getUserId());
 
 		entityManager.persist(vehicle);
 

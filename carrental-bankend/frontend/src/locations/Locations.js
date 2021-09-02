@@ -92,7 +92,7 @@ export class Locations extends React.Component {
       const locations = this.state.locations;
 
   		return (
-        <div className="col-md-9 pl-0 pr-3">
+        <div className="col-md-9 pl-0 pr-3" style={{margin:"auto"}}>
           <div className="card">
             <HeaderContainer title={"All locations"}/>
             <div className="card-body text-center">

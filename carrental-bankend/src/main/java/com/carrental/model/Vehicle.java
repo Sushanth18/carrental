@@ -70,7 +70,7 @@ public class Vehicle implements Serializable {
 	}
 
 	public Vehicle(String registration, String brand, String model, BigDecimal dailyFee, Long locationId,
-			String vehicleStatus, Boolean bestOffer) {
+			String vehicleStatus, Boolean bestOffer,Long userId) {
 		super();
 		this.registration = registration;
 		this.brand = brand;
@@ -79,6 +79,7 @@ public class Vehicle implements Serializable {
 		this.locationId = locationId;
 		this.vehicleStatus = vehicleStatus;
 		this.bestOffer = bestOffer;
+		this.userId = userId;
 	}
 
 	public Vehicle(Long id) {

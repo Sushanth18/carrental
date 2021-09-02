@@ -123,7 +123,7 @@ export class MyAllReservedVehicles extends React.Component {
 
 
   		return (
-        <div className="col-md-9 pl-0 pr-3">
+        <div className="col-md-9 pl-0 pr-3" style={{margin:"auto"}}>
           <div className="card">
             <HeaderContainer title={"My all reserved vehicles"}/>
             <div className="card-body text-center">

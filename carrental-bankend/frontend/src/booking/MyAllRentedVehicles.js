@@ -111,7 +111,7 @@ export class MyAllRentedVehicles extends React.Component {
 
 
   		return (
-        <div className="col-md-9 pl-0 pr-3">
+        <div className="col-md-9 pl-0 pr-3" style={{margin:"auto"}}>
           <div className="card">
             <HeaderContainer title={"My all rented vehicles"}/>
             <div className="card-body text-center">

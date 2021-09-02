@@ -59,9 +59,11 @@ export class CarItem extends React.Component {
 		  {console.log(this.props)}
         <div className="container-car-search container card card-body shadow-sm my-4">
           <div className="row">
-            <div className='car-img-container col-md-3 home-card-view flex-center'
-                       style={{ backgroundImage : `url(${this.props.photoName})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "contain" }}>
-            </div>
+            {/* <div className='car-img-container col-md-3 home-card-view flex-center' */}
+                       {/* style={{ backgroundImage : `url(${this.props.photoName})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "contain" }}> */}
+						   <img className="car-img-container mb-3 home-card-view flex-center " style={{ backgroundImage : `url(${this.props.photoName})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "contain" }} 
+						    src={window.location.origin + `/vehicle_img/${this.props.photoName}`}></img>
+            {/* </div> */}
             <div className="car-info-container col-md-8">
               <div className="car-main-info-container ">
                 <div className="row col">

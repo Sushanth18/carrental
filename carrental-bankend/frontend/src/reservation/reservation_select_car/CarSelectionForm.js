@@ -113,7 +113,7 @@ class CarSelectionForm extends React.Component{
       <form>
         <div className="shadow card">
           <div className="card-header">
-            <h1>Select car:</h1>
+            <h1>Select car :</h1>
           </div>
           <div id="car-item-container" className="card-body">
             <div className="row justify-content-center">
@@ -123,7 +123,7 @@ class CarSelectionForm extends React.Component{
 
           <div className="shadow card mt-3">
             <div className="card-body">
-              <h4 className="ml-4 mt-3">Selected car: <strong>{this.state.brandAndModel ? this.state.brandAndModel : ""}</strong></h4>
+              <h4 className="ml-4 mt-3">Selected car : <strong>{this.state.brandAndModel ? this.state.brandAndModel : ""}</strong></h4>
               {inputError ? [
                 <div key="input_Error" className="alert alert-danger my-4">
                   Fill all fields with valid values.

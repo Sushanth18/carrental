@@ -144,7 +144,7 @@ export class Settings extends React.Component {
 
             <div className="form-group">
               <div className="row">
-                <label className="ml-5 mt-4 col-md-2">Pesel:</label>
+                <label className="ml-5 mt-4 col-md-2">PAN :</label>
                 <div className="ml-4 mt-3 col-md-3">
                   <input type="number" className="form-control"  name="user_pesel" value={this.state.user_pesel} onChange={this.handleInputChange}/>
                 </div>

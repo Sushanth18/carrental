@@ -3,6 +3,7 @@ import "jquery/src/jquery.js";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "../static/css/main.css";
+import userImage from "../static/img/user.png";
 // import {
 //   Dropdown,
 //   DropdownToggle,
@@ -99,13 +100,14 @@ export class UserData extends React.Component {
             <div className="row text-center">
               <div className="col-md-3">
                 <img
-                  src={require("../static/img/user.png")}
+                  src={userImage}
+                  // src={require("../static/img/user.png")}
                   alt=""
                   className="mr-3 mt-3 rounded-circle"
                   style={{ height: 80 }}
                 />
               </div>
-              <div className="mx-auto mt-4 text-center my-auto">
+              <div className="col-md-9  my-auto" style={{textAlign :"left"}}>
                 <strong>{username ? username : ""}</strong>
               </div>
             </div>

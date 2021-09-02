@@ -57,7 +57,7 @@ export class SendEmail extends React.Component {
     const userlist = this.state.userlist;
 
 		return (
-      <div className="col-md-9 pl-0 pr-3">
+      <div className="col-md-9 pl-0 pr-3" style={{margin:"auto"}}>
         <div className="card">
           <HeaderContainer title={"Users list"}/>
           <div className="card-body text-center">

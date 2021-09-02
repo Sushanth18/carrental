@@ -90,7 +90,7 @@ export class BookingChanges extends React.Component {
       const allBookingsList = this.state.allBookingsList;
 
   		return (
-        <div className="col-md-9 pl-0 pr-3">
+        <div className="col-md-9 pl-0 pr-3" style={{margin:"auto"}}>
           <div className="card">
             <HeaderContainer title={"Booking changes"}/>
             <div className="card-body text-center">

@@ -17,6 +17,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,7 +27,7 @@ import com.carrental.exception.LoginExistsException;
 import com.carrental.model.User;
 import com.carrental.service.UserServiceImpl;
 
-@Controller
+@RestController
 @RequestMapping(value = { "/registration" })
 public class RegistrationController {
 

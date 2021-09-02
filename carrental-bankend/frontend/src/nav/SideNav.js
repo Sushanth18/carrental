@@ -44,16 +44,18 @@ export class SideNav extends React.Component {
     const userRoles = this.state.userRoles;
 
     return (
-      <section id="menu-panel" className="mb-5">
+      <section id="menu-panel" className="mb-4">
         <div className="card">
           <div className="card-header">
             <a className="card-link" data-toggle="collapse" href="#collapseOne">
-              <i className="fa fa-list-ul"></i>Booking
+              <i className="fa fa-list-ul"
+              style ={{marginRight : "5%"}}
+              ></i>Booking
             </a>
           </div>
 
           <div id="collapseOne" className="collapse" data-parent="#accordion">
-            <div key="allbokinglist">
+            {/* <div key="allbokinglist">
               <div className="container my-3">
                 <i className="fa fa-angle-right"></i>
                 <Link
@@ -64,8 +66,8 @@ export class SideNav extends React.Component {
                 </Link>
               </div>
               <hr></hr>
-            </div>
-            <div key="allreservedlist">
+            </div> */}
+            {/* <div key="allreservedlist">
               <div className="container my-3">
                 <i className=" fa fa-angle-right"></i>
                 <Link
@@ -76,9 +78,9 @@ export class SideNav extends React.Component {
                 </Link>
               </div>
               <hr></hr>
-            </div>
+            </div> */}
 			
-            <div key="allrentslist">
+            {/* <div key="allrentslist">
               <div className="container my-3">
                 <i className=" fa fa-angle-right"></i>
                 <Link
@@ -89,11 +91,13 @@ export class SideNav extends React.Component {
                 </Link>
               </div>
               <hr></hr>
-            </div>
+            </div> */}
 
             <div key="mybokinglist">
               <div className="container my-3">
-                <i className=" fa fa-angle-right"></i>
+                <i className=" fa fa-angle-right"
+                style ={{marginRight : "5%"}}
+                ></i>
                 <Link
                   to={"/CarRental/profile/allmybookings"}
                   className="linkstyle_black"
@@ -105,7 +109,9 @@ export class SideNav extends React.Component {
             </div>
             <div key="resbokinglist">
               <div className="container my-3">
-                <i className=" fa fa-angle-right"></i>
+                <i className=" fa fa-angle-right"
+                style ={{marginRight : "5%"}}
+                ></i>
                 <Link
                   to={"/CarRental/profile/myreservedbookings"}
                   className="linkstyle_black"
@@ -117,7 +123,9 @@ export class SideNav extends React.Component {
             </div>
             <div key="myrent">
               <div className="container my-3">
-                <i className=" fa fa-angle-right"></i>
+                <i className=" fa fa-angle-right"
+                style ={{marginRight : "5%"}}
+                ></i>
                 <Link
                   to={"/CarRental/profile/myrentedbookings"}
                   className="linkstyle_black"
@@ -129,7 +137,9 @@ export class SideNav extends React.Component {
             </div>
             <div key="changes">
               <div className="container my-3">
-                <i className=" fa fa-angle-right"></i>
+                <i className=" fa fa-angle-right"
+                style ={{marginRight : "5%"}}
+                ></i>
                 <Link
                   to={"/CarRental/profile/bookingchanges"}
                   className="linkstyle_black"
@@ -171,12 +181,16 @@ export class SideNav extends React.Component {
               data-toggle="collapse"
               href="#collapseThree"
             >
-              <i className=" fa fa-car"></i> Cars
+              <i className=" fa fa-car"
+              style ={{marginRight : "5%"}}
+              ></i> Cars
             </a>
           </div>
           <div id="collapseThree" className="collapse" data-parent="#accordion">
             <div className="container my-3">
-              <i className=" fa fa-angle-right"></i>
+              <i className=" fa fa-angle-right"
+              style ={{marginRight : "5%"}}
+              ></i>
               <Link
                 to={"/CarRental/profile/carslist"}
                 className="linkstyle_black"
@@ -186,7 +200,9 @@ export class SideNav extends React.Component {
             </div>
             <hr></hr>
             <div className="container my-3">
-              <i className=" fa fa-angle-right"></i>
+              <i className=" fa fa-angle-right"
+              style ={{marginRight : "5%"}}
+              ></i>
               <Link
                 to={"/CarRental/profile/addcar"}
                 className="linkstyle_black"
@@ -196,7 +212,9 @@ export class SideNav extends React.Component {
             </div>
             <hr></hr>
             <div className="container my-3">
-              <i className=" fa fa-angle-right"></i>
+              <i className=" fa fa-angle-right"
+              style ={{marginRight : "5%"}}
+              ></i>
               <Link
                 to={"/CarRental/profile/carequipments"}
                 className="linkstyle_black"
@@ -206,7 +224,9 @@ export class SideNav extends React.Component {
             </div>
             <hr></hr>
             <div className="container my-3">
-              <i className=" fa fa-angle-right"></i>
+              <i className=" fa fa-angle-right"
+              style ={{marginRight : "5%"}}
+              ></i>
               <Link
                 to={"/CarRental/profile/equipmentslist"}
                 className="linkstyle_black"
@@ -247,12 +267,16 @@ export class SideNav extends React.Component {
               data-toggle="collapse"
               href="#collapseFive"
             >
-              <i className=" fa fa-map-marker"></i>Locations
+              <i className=" fa fa-map-marker"
+              style ={{marginRight : "5%"}}
+              ></i>Locations
             </a>
           </div>
           <div id="collapseFive" className="collapse" data-parent="#accordion">
             <div className="container my-3">
-              <i className=" fa fa-angle-right"></i>
+              <i className=" fa fa-angle-right"
+              style ={{marginRight : "5%"}}
+              ></i>
               <Link
                 to={"/CarRental/profile/locations"}
                 className="linkstyle_black"
@@ -263,7 +287,7 @@ export class SideNav extends React.Component {
           </div>
         </div>
 
-        <div className="card" key="emailsending">
+        {/* <div className="card" key="emailsending">
           <div className="card-header">
             <i className=" fa fa-envelope-o"></i>
             <Link
@@ -273,11 +297,13 @@ export class SideNav extends React.Component {
               Send e-mail
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <div className="card">
           <div className="card-header">
-            <i className=" fa fa-cog"></i>
+            <i className=" fa fa-cog"
+            style ={{marginRight : "5%"}}
+            ></i>
             <Link
               to={"/CarRental/profile/settings"}
               className="linkstyle_black"
@@ -290,7 +316,9 @@ export class SideNav extends React.Component {
         <div className="card">
           <div className="card-header">
             <a className="collapsed card-link" href="/CarRental">
-              <i className=" fa fa-home"></i> Home
+              <i className=" fa fa-home"
+              style ={{marginRight : "5%"}}
+              ></i> Home
             </a>
           </div>
         </div>
@@ -298,7 +326,9 @@ export class SideNav extends React.Component {
         <div className="card">
           <div className="card-header">
             <a className="collapsed card-link" onClick={this.logout}>
-              <i className=" fa fa-sign-out"></i> Log out
+              <i className=" fa fa-sign-out"
+              style ={{marginRight : "5%"}}
+              ></i> Log out
             </a>
           </div>
         </div>

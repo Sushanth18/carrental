@@ -41,8 +41,9 @@ export class CarItem extends React.Component{
     return(
       <div className="car-single-item-reservation container card card-body shadow mx-4 my-3 text-center">
         <h5 className="mb-2">{brand} {model}</h5>
-        <div className="car-img-container" style={{ backgroundImage : `url(${image_url})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
-        </div>
+        {/* <div className="car-img-container" style={{ backgroundImage : `url(${image_url})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+        </div> */}
+        <img className="car-img-container" src={window.location.origin + `/vehicle_img/${this.props.photoName}`}></img>
         <div className="text-center">
           <h3 className="mt-3">${dailyFee}</h3>
         </div>

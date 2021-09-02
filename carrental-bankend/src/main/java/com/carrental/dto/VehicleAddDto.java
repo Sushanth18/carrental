@@ -27,7 +27,7 @@ public class VehicleAddDto {
 	private String description;
 	private String fileName;
 	private Integer productionYear;
-
+	private Long userId;
 	public VehicleAddDto() {
 		super();
 	}
@@ -219,6 +219,12 @@ public class VehicleAddDto {
 		this.fileName = fileName;
 	}
 
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	public Long getUserId() {
+		return userId;
+	}
 	@Override
 	public String toString() {
 		return "VehicleAddDto [id=" + id + ", brand=" + brand + ", model=" + model + ", dailyFee=" + dailyFee

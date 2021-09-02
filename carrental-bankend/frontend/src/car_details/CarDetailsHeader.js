@@ -23,8 +23,9 @@ export class CarDetailsHeader extends React.Component {
           </div>
         </div>
 
-        <div id="car-details-image" className="car-img-container shadow my-3 col-md-10 offset-md-1" style={{ backgroundImage : `url(${vehicleProperties.vehicleParameters.photoName})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
-        </div>
+        {/* <div id="car-details-image" className="car-img-container shadow my-3 col-md-10 offset-md-1" style={{ backgroundImage : `url(${vehicleProperties.vehicleParameters.photoName})`,  backgroundPosition: "center",  backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+        </div> */}
+        <img  id="car-details-image" className="car-img-container shadow my-3 col-md-10 offset-md-1" src={window.location.origin + `/vehicle_img/${vehicleProperties.vehicleParameters.photoName}`}></img>
       </section>
 		)
 	}

@@ -23,24 +23,28 @@ class Register extends Component {
 
     var formData = new FormData()
     const url = "http://localhost:8080/CarRental/registration";
-      formData.append('name',e.target.elements.inputName.value);
-      formData.append('surname',e.target.elements.inputLastName.value);
-      formData.append('login',e.target.elements.inputUsername.value);
-      formData.append('password',e.target.elements.inputPassword.value);
-      formData.append('passwordMatches',e.target.elements.inputPasswordAgain.value);
-      formData.append('email',e.target.elements.inputEmail.value);
-      formData.append('phone',e.target.elements.inputPhone.value);
-    
-      fetch(url, {
-        method: 'POST',
-        body: formData
-      }).then((response) => {
-        response.json().then((json) => {
-        console.log("json::",json);
-        this.props.history.push({pathname: '/CarRental/login'});
-        });
+    formData.append('name', e.target.elements.inputName.value);
+    formData.append('surname', e.target.elements.inputLastName.value);
+    formData.append('login', e.target.elements.inputUsername.value);
+    formData.append('password', e.target.elements.inputPassword.value);
+    formData.append('passwordMatches', e.target.elements.inputPasswordAgain.value);
+    formData.append('email', e.target.elements.inputEmail.value);
+    formData.append('phone', e.target.elements.inputPhone.value);
+
+    fetch(url, {
+      method: 'POST',
+      body: formData
+    }).then((response) => {
+      response.json().then((json) => {
+        console.log("json::", json);
+        if (json.success == 1)
+          this.props.history.push({ pathname: '/CarRental/login' });
+        else
+          window.alert(json.message);
+        // 
       });
-      
+    });
+
     // this.props.history.push({
     //   pathname: "/CarRental/login",
     //   state: {},
@@ -135,7 +139,7 @@ class Register extends Component {
                 autocomplete="off"
               />
             </div>
-          
+
 
 
             <div className="form-group">
@@ -177,4 +181,4 @@ class Register extends Component {
     );
   }
 }
-export default  Register;
+export default Register;
