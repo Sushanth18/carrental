@@ -34,7 +34,7 @@ export class Bodytype extends React.Component {
       <div className="form-group">
         <label>Body type: </label>
         <select  key="bodytype" name="bodytype" id="bodytype" className="form-control" value={this.props.bodytype || ""} onChange={this.props.handleInputChange}>
-          <option value=""></option>
+          <option value="">Select Any</option>
           {bodytypelist ? bodytypelist.map(this.optionsList) : <option value=""></option>}
         </select>
       </div>

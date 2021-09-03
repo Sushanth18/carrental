@@ -17,7 +17,7 @@ export class Model extends React.Component {
       <div className="form-group">
         <label >Model:</label>
         <select  key="model" name="model" id="model" className="form-control" value={this.props.model || ""} onChange={this.props.handleInputChange}>
-          <option value=""></option>
+          <option value="">Select Any</option>
           {modellist ? modellist.map(this.optionsList) : <option value=""></option>}
         </select>
       </div>

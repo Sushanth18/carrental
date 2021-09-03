@@ -9,7 +9,11 @@ import org.springframework.stereotype.Repository;
 
 import com.carrental.exception.BookingUnavailableVehicleException;
 import com.carrental.model.Booking;
+import com.carrental.model.Location;
+import com.carrental.model.User;
 import com.carrental.model.Vehicle;
+import com.carrental.service.LocationService;
+import com.carrental.service.UserService;
 
 //@Repository
 public class BookingRepositoryImpl implements BookingRepositoryCustom {
@@ -22,19 +26,31 @@ public class BookingRepositoryImpl implements BookingRepositoryCustom {
 
 	@Autowired
 	private BookingRepository bookingRepository;
+	
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private LocationService locationService;
 
 	@Override
 	@Transactional
 	public void addBooking(Booking booking) throws BookingUnavailableVehicleException {
 		Vehicle reservedVehicle = vehicleRepository.getVehicleUsingId(booking.getVehicleId());
-
+		booking.setVehicleName(reservedVehicle.getBrand());
+		User user=userService.getUserById(booking.getUserId());
+		booking.setUserName(user.getName());
+		
+		Location location=locationService.getLocationById(booking.getLocationId());
+		booking.setLocationName(location.getCity());
+		
 		if (reservedVehicle.getVehicleStatus() == "UAV") {
 			throw new BookingUnavailableVehicleException("Cannot book unavailable vehicle.");
 		} else {
 			reservedVehicle.setVehicleStatus("UAV");
 
 			entityManager.merge(reservedVehicle);
-
+			
 			entityManager.persist(booking);
 		}
 	}

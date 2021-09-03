@@ -19,7 +19,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.carrental.service.UserService;
+import com.carrental.service.VehicleService;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -56,6 +61,15 @@ public class Booking implements Serializable {
 
 	@Column(name = "total_cost")
 	private BigDecimal totalCost;
+
+	@Column(name = "user_name")
+	private String userName;
+
+	@Column(name = "vehicle_name")
+	private String vehicleName;
+
+	@Column(name = "location_name")
+	private String LocationName;
 
 	public Booking() {
 		super();
@@ -135,6 +149,30 @@ public class Booking implements Serializable {
 
 	public void setTotalCost(BigDecimal totalCost) {
 		this.totalCost = totalCost;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public String getVehicleName() {
+		return vehicleName;
+	}
+
+	public void setVehicleName(String vehicleName) {
+		this.vehicleName = vehicleName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setLocationName(String locationName) {
+		LocationName = locationName;
+	}
+
+	public String getLocationName() {
+		return LocationName;
 	}
 
 	@Override

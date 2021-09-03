@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.carrental.dto.UserDetail;
 import com.carrental.model.Comment;
+import com.carrental.model.Location;
 import com.carrental.model.User;
 import com.carrental.model.Vehicle;
+import com.carrental.service.LocationService;
 import com.carrental.service.UserService;
 import com.carrental.service.VehicleServiceImpl;
 
@@ -21,14 +23,19 @@ import com.carrental.service.VehicleServiceImpl;
 public class VehiclePropertiesController {
 
 	@Autowired
-	VehicleServiceImpl vehicleService;
+	LocationService locationService;
 
+	
+	@Autowired
+	VehicleServiceImpl vehicleService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public Vehicle getVehicleProperties(@PathVariable Long id) {
 
-		return vehicleService.getVehicleById(id);
+		Vehicle vehicle = vehicleService.getVehicleById(id);
+		Location locationById = locationService.getLocationById(vehicle.getLocationId());
+		vehicle.setLocationName(locationById.getCity());
+		return vehicle; 
 	}
-
 
 }

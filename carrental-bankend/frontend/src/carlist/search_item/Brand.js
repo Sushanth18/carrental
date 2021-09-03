@@ -40,7 +40,7 @@ export class Brand extends React.Component {
       <div className="form-group">
         <label >Brand: </label>
         <select  key="brand" name="brand" id="brand" className="form-control" value={this.props.brand || ""} onChange={this.props.handleInputChange}>
-          <option value=""></option>
+          <option value="">Select Any</option>
           {brandlist ? brandlist.map(this.optionsList) : <option value=""></option>}
         </select>
       </div>

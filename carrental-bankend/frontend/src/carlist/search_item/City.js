@@ -34,7 +34,7 @@ export class City extends React.Component {
       <div className="form-group">
         <label>City:</label>
         <select  key="city" name="city" id="city" className="form-control" value={this.props.city || ""} onChange={this.props.handleInputChange}>
-          <option value=""></option>
+          <option value="">Select Any</option>
           {citylist ? citylist.map(this.optionsList) : <option value=""></option>}
         </select>
       </div>

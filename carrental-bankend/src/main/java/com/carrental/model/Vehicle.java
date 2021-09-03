@@ -61,6 +61,9 @@ public class Vehicle implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "vehicle")
 	private Set<Comment> comments;
+	
+	@Column(name = "location_name")
+	private String locationName;
 
 	@Column(name = "user_id")
 	private Long userId;
@@ -183,6 +186,13 @@ public class Vehicle implements Serializable {
 		return userId;
 	}
 
+	public void setLocationName(String locationName) {
+		this.locationName = locationName;
+	}
+	
+	public String getLocationName() {
+		return locationName;
+	}
 	@Override
 	public String toString() {
 		return "Vehicle [id=" + id + ", registration=" + registration + ", brand=" + brand + ", model=" + model

@@ -242,7 +242,7 @@ export class ReservationConfirm extends React.Component {
 
                 <div className="form-group">
                   <label>Cost: </label>
-                  <strong> {fullCost ? fullCost : ""} $</strong>
+                  <strong> ₹ {fullCost ? fullCost : ""}  </strong>
                 </div>
 
                 <hr></hr>

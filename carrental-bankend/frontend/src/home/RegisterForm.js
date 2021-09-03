@@ -164,8 +164,8 @@ class RegisterForm extends React.Component {
               <div className="form-group">
                 <label>City:</label>
                 <select id="selected_city" name="selected_city" required className="form-control" onChange={this.handleInputChange}>
-                    <option value=""></option>
-                    {citylist ? citylist.map(this.optionsList) : <option value=""></option>}
+                    <option value="">Select Location</option>
+                    {citylist ? citylist.map(this.optionsList) : <option value="">Select Car</option>}
                 </select>
               </div>
               <div className="form-group">

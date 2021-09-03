@@ -32,7 +32,7 @@ export class Chat extends React.Component {
       selectedtoken: '',
       selectedusername: '',
       stompClient: null,
-      vechileId:null
+      vechileId: null
     };
   }
 
@@ -83,9 +83,9 @@ export class Chat extends React.Component {
         type: 'CHAT',
         receiver: this.state.selectedusername,
         vechileId: this.state.vechileId,
-        dateTime:moment(new Date()).format("DD/MM/YYYY hh:mm:ss")
+        dateTime: moment(new Date()).format("DD/MM/YYYY hh:mm:ss")
       };
-      this.setState({ broadcastMessage: [...this.state.broadcastMessage, chatMessage],chatMessage:''})
+      this.setState({ broadcastMessage: [...this.state.broadcastMessage, chatMessage], chatMessage: '' })
       // send public message
       this.state.stompClient.send("/app/sendPrivateMessage", {}, JSON.stringify(chatMessage));
     }
@@ -93,13 +93,13 @@ export class Chat extends React.Component {
 
   onMessageReceived = (payload) => {
     var message = JSON.parse(payload.body);
-    
-    this.setState({ broadcastMessage: [...this.state.broadcastMessage, message]})
-   
+
+    this.setState({ broadcastMessage: [...this.state.broadcastMessage, message] })
+
   }
 
   updateUserOnMenu = (user) => {
-    this.setState({ selectedusername: user.username,selectedName:user.name }, () => {
+    this.setState({ selectedusername: user.username, selectedName: user.name }, () => {
       this.state.stompClient.connect({}, this.onConnected, this.onError);
       this.fetchChat(user.id);
     });
@@ -142,40 +142,44 @@ export class Chat extends React.Component {
     let username = sessionStorage.getItem("username");
     let id = sessionStorage.getItem("user_id");
     if (id && id != "null") {
-      if(type=="renter"){
-      fetch("http://localhost:8080/CarRental/carlist/owner/" + vechileId)
-        .then((response) => response.json())
-        .then((data) => {
-          this.setState({ users: data, channelConnected: true });
-        
-          this.setState({ selectedusername: data[0].username,selectedName:data[0].name,username,id,vechileId }, () => {
-             this.state.stompClient.connect({}, this.onConnected, this.onError);
-             const toUserId=data[0].id;
-             this.fetchChat(toUserId,vechileId,id);
+      if (type == "renter") {
+        fetch("http://localhost:8080/CarRental/carlist/owner/" + vechileId)
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({ users: data, channelConnected: true });
+            if (data != null && data.length > 0) {
+              
+              this.setState({ selectedusername: data[0].username, selectedName: data[0].name, username, id, vechileId }, () => {
+                this.state.stompClient.connect({}, this.onConnected, this.onError);
+                const toUserId = data[0].id;
+                this.fetchChat(toUserId, vechileId, id);
+              });
+            }
           });
-        });
-      }else{
-        fetch("http://localhost:8080/CarRental/carlist/customer-detail/" + vechileId+"?login="+username)
-        .then((response) => response.json())
-        .then((data) => {
-          this.setState({ users: data, channelConnected: true });
-        
-          this.setState({ selectedusername: data[0].username,selectedName:data[0].name,username,id,vechileId }, () => {
-             this.state.stompClient.connect({}, this.onConnected, this.onError);
-             const toUserId=data[0].id;
-             this.fetchChat(toUserId);
+      } else {
+        fetch("http://localhost:8080/CarRental/carlist/customer-detail/" + vechileId + "?login=" + username)
+          .then((response) => response.json())
+          .then((data) => {
+            this.setState({ users: data, channelConnected: true });
+            if (data != null && data.length > 0) {
+              
+              this.setState({ selectedusername: data[0].username, selectedName: data[0].name, username, id, vechileId }, () => {
+                this.state.stompClient.connect({}, this.onConnected, this.onError);
+                const toUserId = data[0].id;
+                this.fetchChat(toUserId);
+              });
+            }
           });
-        }); 
       }
     }
   }
 
   fetchChat = (toUserId) => {
     fetch(`http://localhost:8080/CarRental/chat/${this.state.vechileId}/${this.state.id}/${toUserId}?page=0&number=1000`)
-    .then((response) => response.json())
-    .then((data) => {
-      this.setState({ broadcastMessage: data.content});
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ broadcastMessage: data.content });
+      });
   }
   render() {
 
@@ -192,7 +196,7 @@ export class Chat extends React.Component {
                 broadcastMessage={this.state.broadcastMessage}
                 selectedName={this.state.selectedName}
                 selectedusername={this.state.selectedusername}
-                 />
+              />
 
               <Paper elevation={5}>
                 <Aside roomNotification={this.state.roomNotification}
@@ -233,24 +237,24 @@ export class Chat extends React.Component {
                   )}
                 </ul>
                 <div>
-              <div className="footerComponent">
-                <TextField
-                    id="msg"
-                    label="Type your message here..."
-                    placeholder="Press enter to send message"
-                    onChange={(event)=>this.setState({chatMessage:event.target.value})}
-                    margin="normal"
-                    value={this.state.chatMessage}
-                    onKeyPress={event => {
+                  <div className="footerComponent">
+                    <TextField
+                      id="msg"
+                      label="Type your message here..."
+                      placeholder="Press enter to send message"
+                      onChange={(event) => this.setState({ chatMessage: event.target.value })}
+                      margin="normal"
+                      value={this.state.chatMessage}
+                      onKeyPress={event => {
                         if (event.key === 'Enter') {
-                            this.sendMessage();
+                          this.sendMessage();
                         }
-                    }}
-                />
-            </div>
-            </div>
-              
-             
+                      }}
+                    />
+                  </div>
+                </div>
+
+
               </Paper>
             </div>
 

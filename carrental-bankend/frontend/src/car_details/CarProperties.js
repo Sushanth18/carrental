@@ -41,6 +41,7 @@ export class CarProperties extends React.Component {
             <p className="mx-5 my-4">Production year:  <strong>{vehicleProperties.vehicleParameters.productionYear}</strong></p>
             <p className="mx-5 my-4">Fuel type:  <strong>{vehicleProperties.vehicleParameters.fuelType}</strong></p>
             <p className="mx-5 my-4">Power:            <strong>{vehicleProperties.vehicleParameters.power} KM</strong></p>
+            <p className="mx-5 my-4">Location:            <strong>{vehicleProperties.locationName}</strong></p>
           </div>
           <div className="col-md-6 text-left">
             <p className="mx-5 my-4">Gearbox:         <strong>{vehicleProperties.vehicleParameters.gearbox}</strong></p>

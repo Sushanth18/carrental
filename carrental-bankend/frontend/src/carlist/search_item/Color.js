@@ -34,9 +34,9 @@ export class Color extends React.Component {
 
 		return (
       <div className="form-group">
-        <label>Colorrrr :</label>
+        <label>Color :</label>
         <select  key="color" name="color" id="color" className="form-control" value={this.props.color || "Select Color"} onChange={this.props.handleInputChange}>
-          <option value=""></option>
+          <option value="">Select Any</option>
           {colorList ? colorList.map(this.optionsList) : <option value=""></option>}
         </select>
       </div>

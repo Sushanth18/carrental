@@ -21,7 +21,7 @@ class UserTable extends React.Component {
         <td>{car.model}</td>
         <td>{car.dailyFee}</td>
         <td>{car.registration}</td>
-        <td>{car.locationId}</td>
+        {/* <td>{car.locationId}</td> */}
         <td>{car.vehicleStatus}</td>
         <td>{car.bestOffer==1 ? "YES" : "NO"}</td>
       </tr>
@@ -43,7 +43,7 @@ class UserTable extends React.Component {
               <th>Model</th>
               <th>Daily fee</th>
               <th>Registration</th>
-              <th>Location</th>
+              {/* <th>Location</th> */}
               <th>Vehicle status</th>
               <th>Best offer</th>
             </tr>

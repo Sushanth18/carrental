@@ -70,11 +70,14 @@ export class MyAllBookings extends React.Component {
         <tr key={booking.id}>
            <td><Link to={url} className="linkstyle btn btn-success custom-width">Chat With Owner</Link></td>
           <td>{booking.id}</td>
-          <td>{booking.userId}</td>
-          <td>{booking.vehicleId}</td>
+          {/* <td>{booking.userId}</td> */}
+          <td>{booking.userName}</td>
+          {/* <td>{booking.vehicleId}</td> */}
+          <td>{booking.vehicleName}</td>
           <td>{booking.receiptDate}</td>
           <td>{booking.returnDate}</td>
-          <td>{booking.locationId}</td>
+          {/* <td>{booking.locationId}</td> */}
+          <td>{booking.locationName}</td>
           <td>{booking.bookingStateCode}</td>
           <td>{booking.totalCost}</td>
         </tr>

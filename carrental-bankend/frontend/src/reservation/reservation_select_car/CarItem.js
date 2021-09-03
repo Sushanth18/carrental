@@ -45,7 +45,7 @@ export class CarItem extends React.Component{
         </div> */}
         <img className="car-img-container" src={window.location.origin + `/vehicle_img/${this.props.photoName}`}></img>
         <div className="text-center">
-          <h3 className="mt-3">${dailyFee}</h3>
+          <h3 className="mt-3">₹{dailyFee}</h3>
         </div>
       </div>
     );
